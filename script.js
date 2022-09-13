@@ -16,12 +16,12 @@ const handleCheckbox = () => {
   const numberEl = getElement("number");
   const specialCharEl = getElement("special");
 
-  if (numberEl.checked === "true") {
+  if (numberEl.checked === true) {
     charSet = "0123456789";
   } else {
     charSet = charSet.replace(/0123456789/g, "");
   }
-  if (specialCharEl.checked === "true") {
+  if (specialCharEl.checked === true) {
     charSet += "!@#$%^&()";
   } else {
     charSet = charSet.replace(/[^\w ]/g, "");
@@ -33,7 +33,7 @@ const generatePassword = () => {
   const passwordEl = getElement("password");
 
   const charCount = parseInt(getElement("char-count").innerText);
-  console.log(charCount.length)
+  
   let password = "";
 
   for (let i = 0; i < charCount; i++) {
